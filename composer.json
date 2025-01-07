@@ -27,8 +27,8 @@
     "scripts": {
         "test": "paratest ./tests/ ",
         "unit": "paratest ./tests/ --exclude-group=slow",
-        "format:check": "phpcs --standard=PSR12 ./",
-        "format:write": "phpcbf --standard=PSR12 ./"
+        "format:check": "phpcs --standard=PSR12 ./src/ ./tests/",
+        "format:write": "phpcbf --standard=PSR12 ./src/ ./tests/"
     },
     "authors": [
         {
