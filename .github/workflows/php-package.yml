@@ -2,6 +2,7 @@ name: PHP Package
 on:
   push:
   pull_request:
+  workflow_call:
 jobs:
   format-check:
     name: Check PSR12 Standarts
