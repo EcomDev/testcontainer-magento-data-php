@@ -4,11 +4,11 @@ namespace EcomDev\TestContainers\MagentoData;
 
 final class DbConnectionSettings
 {
-    private const int DEFAULT_PORT = 3306;
-    private const string DEFAULT_USER = 'root';
-    private const string DEFAULT_PASSWORD = '';
-    private const string DEFAULT_DATABASE = '';
-    private const string DEFAULT_CHARSET = 'utf8mb4';
+    private const DEFAULT_PORT = 3306;
+    private const DEFAULT_USER = 'root';
+    private const DEFAULT_PASSWORD = '';
+    private const DEFAULT_DATABASE = '';
+    private const DEFAULT_CHARSET = 'utf8mb4';
 
     public function __construct(
         public readonly string $host,
