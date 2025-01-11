@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.0.0...v1.1.0) (2025-01-11)
+
+
+### Features
+
+* add PHP 8.2 support ([fef64f7](https://github.com/EcomDev/testcontainer-magento-data-php/commit/fef64f7ca0c6590767f300617164b2ebbd72e4dd))
+
 ## 1.0.0 (2025-01-07)
 
 
