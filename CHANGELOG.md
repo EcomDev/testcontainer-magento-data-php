@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.1.0...v1.2.0) (2025-01-22)
+
+
+### Features
+
+* bump PHP version support ([37fdd7d](https://github.com/EcomDev/testcontainer-magento-data-php/commit/37fdd7da7f0a71c347225493ef040ae8e21843a3))
+
+
+### Miscellaneous Chores
+
+* remove tag from version ([b76ee89](https://github.com/EcomDev/testcontainer-magento-data-php/commit/b76ee8947a0db5e44a3993d2f2526ec5994066a3))
+
 ## [1.1.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.0.0...v1.1.0) (2025-01-11)
 
 
