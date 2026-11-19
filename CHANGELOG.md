@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.2.0...v2.0.0) (2026-11-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* Upgrade to Test Containers 1.2
+
+### Features
+
+* Upgrade to Test Containers 1.2 ([b48ae68](https://github.com/EcomDev/testcontainer-magento-data-php/commit/b48ae689269cdd156446389076e0c45662dcb0fa))
+
+
+### Miscellaneous Chores
+
+* change minimum php version for tests ([1665403](https://github.com/EcomDev/testcontainer-magento-data-php/commit/16654032f2c2f5e32edb6e44136124daaecc6fbc))
+* ignore build specific files ([17fe0c0](https://github.com/EcomDev/testcontainer-magento-data-php/commit/17fe0c0ebc0668e478391d6d09f67e5e097ba083))
+* pin release please version ([c5f7f09](https://github.com/EcomDev/testcontainer-magento-data-php/commit/c5f7f09f28f88213f920cf5bddde24c2ba00c2b5))
+* update checkout action version ([daef43a](https://github.com/EcomDev/testcontainer-magento-data-php/commit/daef43afe44f1da8a91413c5a1af855bcc47b60c))
+* update php version and runner image ([0362b86](https://github.com/EcomDev/testcontainer-magento-data-php/commit/0362b86afb75fd9c45aac7cc37c45aaa280530f6))
+* update phpcs, add phpmd ([9ca480e](https://github.com/EcomDev/testcontainer-magento-data-php/commit/9ca480ebd4c7a910356a3b5c8576a374e53bd470))
+
 ## [1.2.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.1.0...v1.2.0) (2025-01-22)
 
 

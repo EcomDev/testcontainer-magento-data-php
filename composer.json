@@ -31,7 +31,11 @@
         "unit": "paratest ./tests/ --exclude-group=slow",
         "static:phpstan": "phpstan analyse --level=8 src",
         "static:phpmd": "phpmd analyze ./src --format text --ruleset ./phpmd.ruleset.xml",
-        "static": ["@static:phpstan", "@static:phpmd", "@format:check"],
+        "static": [
+            "@static:phpstan",
+            "@static:phpmd",
+            "@format:check"
+        ],
         "format:check": "phpcs --standard=PSR12 ./src/ ./tests/",
         "format:write": "phpcbf --standard=PSR12 ./src/ ./tests/"
     },
