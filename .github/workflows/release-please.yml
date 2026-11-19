@@ -16,6 +16,6 @@ jobs:
     needs: verify-release
     runs-on: ubuntu-24.04
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5.0.0
         with:
           release-type: php
