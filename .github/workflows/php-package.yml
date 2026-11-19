@@ -30,5 +30,7 @@ jobs:
           tools: composer:v2
       - run: composer install
         shell: bash
+      - run: composer static
+        shell: bash
       - run: composer test
         shell: bash
