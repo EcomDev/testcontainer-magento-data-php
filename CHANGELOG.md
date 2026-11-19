@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v2.0.0...v2.0.1) (2026-11-19)
+
+
+### Miscellaneous Chores
+
+* update build badges in readme ([cedbe89](https://github.com/EcomDev/testcontainer-magento-data-php/commit/cedbe8907e798b80975a451193c4b8c82831cf32))
+
 ## [2.0.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.2.0...v2.0.0) (2026-11-19)
 
 
