@@ -16,6 +16,20 @@ interface ContainerBuilder
     public function withMagentoVersion(string $version): self;
 
     /**
+     * Specifies distribution for container
+     *
+     * By default, it uses Magento.
+     *
+     * Allowed values are:
+     * - magento
+     * - mageos
+     *
+     * @param string $distribution
+     * @return self
+     */
+    public function withDistribution(string $distribution): self;
+
+    /**
      * Sets the variation and returns a new instance with the updated value.
      *
      * @param string $variation The variation to be set.
@@ -40,7 +54,7 @@ interface ContainerBuilder
      *
      * Helpful for re-using read-only container usage
      */
-    public function shared(string $id): RunningContainer;
+    public function shared(string $containerId): RunningContainer;
 
     /**
      * Returns final image name based on all configuration provided

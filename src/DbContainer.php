@@ -2,22 +2,21 @@
 
 namespace EcomDev\TestContainers\MagentoData;
 
-use Testcontainers\Container\Container;
-use Testcontainers\Trait\DockerContainerAwareTrait;
+use Testcontainers\Container\GenericContainer;
 use Testcontainers\Wait\WaitForLog;
 
 final class DbContainer implements RunningContainer
 {
-    private function __construct(private readonly ContainerWithVolume $container)
+    private function __construct(private readonly GenericStartedContainer $container)
     {
     }
+
     public static function fromImage(string $imageName): self
     {
-        $container = ContainerWithVolume::make($imageName);
-        $container->withWait(new WaitForLog('ready for connections'));
-        $container->run();
-
-        return new self($container);
+        return new self(GenericStartedContainer::create(
+            (new GenericContainer($imageName))->withWait(new WaitForLog('ready for connections')),
+            $imageName
+        ));
     }
 
     public function getConnectionSettings(): DbConnectionSettings
@@ -27,7 +26,7 @@ final class DbContainer implements RunningContainer
 
     public function getAddress(): string
     {
-        return $this->container->getAddress();
+        return $this->container->getResolvedAddress();
     }
 
     public function getId(): string
@@ -37,11 +36,11 @@ final class DbContainer implements RunningContainer
 
     public function getImageName(): string
     {
-        return $this->container->image;
+        return $this->container->getImageName();
     }
 
     public function __destruct()
     {
-        $this->container->remove();
+        $this->container->stop();
     }
 }

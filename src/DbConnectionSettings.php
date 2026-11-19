@@ -20,6 +20,9 @@ final class DbConnectionSettings
     ) {
     }
 
+    /**
+     * @param array<string, string> $envVars
+     */
     public static function fromEnvironment(array $envVars, string $address): self
     {
         return new self(

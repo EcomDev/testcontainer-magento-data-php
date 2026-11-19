@@ -20,11 +20,11 @@ final class OpenSearchContainerBuilder implements ContainerBuilder
     }
 
     #[ReturnTypeWillChange]
-    public function shared(string $id): OpenSearchContainer
+    public function shared(string $containerId): OpenSearchContainer
     {
         /** @var OpenSearchContainer $container */
-        $container = ContainerRegistry::findContainer($this->getImageName(), $id)
-            ?? ContainerRegistry::registerContainer($id, $this->build());
+        $container = ContainerRegistry::findContainer($this->getImageName(), $containerId)
+            ?? ContainerRegistry::registerContainer($containerId, $this->build());
         return $container;
     }
 
@@ -32,7 +32,7 @@ final class OpenSearchContainerBuilder implements ContainerBuilder
     {
         return sprintf(
             "%s:%s",
-            ContainerMetadata::getImageName('opensearch'),
+            ContainerMetadata::getImageNameWithDistribution('opensearch', $this->distribution),
             $this->generateImageTag()
         );
     }

@@ -25,13 +25,12 @@ class DbContainerTest extends TestCase
 
     #[Test]
     #[Group("slow")]
-    public function startsLatestMySQLContainerByDefault()
+    public function startsLatestMagentoMySQLContainerByDefault()
     {
         $container = DbContainerBuilder::mysql()
             ->build();
 
         $connectionSettings = $container->getConnectionSettings();
-
         $connection = $this->createConnection($connectionSettings);
         $result = $connection->query('SELECT COUNT(*) FROM catalog_product_entity');
         $this->assertEquals(0, $result->fetch(PDO::FETCH_COLUMN));
@@ -120,6 +119,19 @@ class DbContainerTest extends TestCase
             DbContainerBuilder::mariadb()
                 ->withSampleData()
                 ->withMagentoVersion('2.4.7-p2')
+                ->getImageName()
+        );
+    }
+
+    #[Test]
+    public function generatesMariadbImageForMageOsVersion()
+    {
+        $this->assertEquals(
+            'ghcr.io/ecomdev/testcontainer-mageos-data/mariadb:3.6.0-sampledata',
+            DbContainerBuilder::mariadb()
+                ->withSampleData()
+                ->withDistribution('mageos')
+                ->withMagentoVersion('3.6.0')
                 ->getImageName()
         );
     }

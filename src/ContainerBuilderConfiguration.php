@@ -22,12 +22,29 @@ trait ContainerBuilderConfiguration
     private string $variation = '';
 
     /**
+     * Default Magento distribution
+     *
+     * @var string
+     */
+    private string $distribution = 'magento';
+
+    /**
      * Sets the Magento version and returns a new instance with the updated value.
      */
     public function withMagentoVersion(string $version): self
     {
         $other = clone $this;
         $other->magentoVersion = $version;
+        return $other;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function withDistribution(string $distribution): self
+    {
+        $other = clone $this;
+        $other->distribution = $distribution;
         return $other;
     }
 

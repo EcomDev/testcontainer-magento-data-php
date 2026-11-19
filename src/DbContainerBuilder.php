@@ -30,17 +30,17 @@ final class DbContainerBuilder implements ContainerBuilder
         return self::for('mariadb');
     }
 
-    public static function for($type): self
+    public static function for(string $type): self
     {
         return new self($type);
     }
 
     #[ReturnTypeWillChange]
-    public function shared(string $id): DbContainer
+    public function shared(string $containerId): DbContainer
     {
         /** @var DbContainer $container */
-        $container = ContainerRegistry::findContainer($this->getImageName(), $id)
-            ?? ContainerRegistry::registerContainer($id, $this->build());
+        $container = ContainerRegistry::findContainer($this->getImageName(), $containerId)
+            ?? ContainerRegistry::registerContainer($containerId, $this->build());
         return $container;
     }
 
@@ -52,6 +52,10 @@ final class DbContainerBuilder implements ContainerBuilder
 
     public function getImageName(): string
     {
-        return sprintf('%s:%s', ContainerMetadata::getImageName($this->type), $this->generateImageTag());
+        return sprintf(
+            '%s:%s',
+            ContainerMetadata::getImageNameWithDistribution($this->type, $this->distribution),
+            $this->generateImageTag()
+        );
     }
 }
