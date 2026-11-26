@@ -14,7 +14,8 @@ final class DbContainer implements RunningContainer
     public static function fromImage(string $imageName): self
     {
         return new self(GenericStartedContainer::create(
-            (new GenericContainer($imageName))->withWait(new WaitForLog('ready for connections')),
+            (new GenericContainer($imageName))
+                ->withWait((new WaitForLog('ready for connections'))->withPollInterval(50)),
             $imageName
         ));
     }

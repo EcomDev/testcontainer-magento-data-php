@@ -2,11 +2,13 @@
 
 namespace EcomDev\TestContainers\MagentoData;
 
-use JsonException;
+use Docker\API\Exception\ConflictException;
+use Docker\API\Exception\NotFoundException;
 use Override;
 use Testcontainers\Container\GenericContainer;
 use Testcontainers\Container\StartedGenericContainer;
-use Testcontainers\Wait\WaitStrategy;
+use Testcontainers\Container\StoppedGenericContainer;
+use Testcontainers\Container\StoppedTestContainer;
 
 /**
  * Container extension for removing volume associated with test container
@@ -81,5 +83,17 @@ final class GenericStartedContainer extends StartedGenericContainer
     public function getImageName(): string
     {
         return $this->originalImageName;
+    }
+
+    #[Override]
+    public function stop(): StoppedTestContainer
+    {
+        try {
+            $this->dockerClient->containerDelete($this->id, ['force' => true, 'v' => true]);
+        } catch (NotFoundException | ConflictException) {
+            // The container is already gone or being auto-removed by Docker
+        }
+
+        return new StoppedGenericContainer($this->id);
     }
 }

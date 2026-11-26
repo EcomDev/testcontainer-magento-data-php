@@ -15,7 +15,10 @@ final class OpenSearchContainer implements RunningContainer
     {
         return new self(GenericStartedContainer::create(
             (new GenericContainer($imageName))
-                ->withWait(new WaitForLog('Cluster health status changed from [RED]', false, 60000))
+                ->withWait(
+                    (new WaitForLog('Cluster health status changed from [RED]', false, 60000))
+                        ->withPollInterval(50)
+                )
                 ->withEnvironment([
                     'discovery.type' => 'single-node',
                     'DISABLE_SECURITY_PLUGIN' => 'true'
