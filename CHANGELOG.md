@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.1.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v2.0.0...v2.1.0) (2026-11-26)
+
+
+### Features
+
+* improve performance of test container startup ([ca05ee0](https://github.com/EcomDev/testcontainer-magento-data-php/commit/ca05ee0c4929b9cd8eddd406ce74f609f8588f4d))
+* improve speed of stopping container ([ca05ee0](https://github.com/EcomDev/testcontainer-magento-data-php/commit/ca05ee0c4929b9cd8eddd406ce74f609f8588f4d))
+
+
+### Miscellaneous Chores
+
+* add current supported php versions to build ([28d43ee](https://github.com/EcomDev/testcontainer-magento-data-php/commit/28d43ee6805436bf8cf511ae64a9fc49c0e2d37e))
+* remove PHP8.3 supprt from new release ([5a48db9](https://github.com/EcomDev/testcontainer-magento-data-php/commit/5a48db98f4c3f7d75e82cc7c4bc9ce0d48203631))
+* update build badges in readme ([cedbe89](https://github.com/EcomDev/testcontainer-magento-data-php/commit/cedbe8907e798b80975a451193c4b8c82831cf32))
+* update db container test to use more recent version ([06a021a](https://github.com/EcomDev/testcontainer-magento-data-php/commit/06a021aef95a63e4469d067ba61f3a9091c06bca))
+
 ## [2.0.0](https://github.com/EcomDev/testcontainer-magento-data-php/compare/v1.2.0...v2.0.0) (2026-11-19)
 
 
