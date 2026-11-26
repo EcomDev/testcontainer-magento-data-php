@@ -89,7 +89,7 @@ class DbContainerTest extends TestCase
     public function loadsMagentoSampleDataContainer()
     {
         $container = DbContainerBuilder::mysql()
-            ->withMagentoVersion('2.4.7-p3')
+            ->withMagentoVersion('2.4.9')
             ->withSampleData()
             ->build();
 
